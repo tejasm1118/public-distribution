@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PDS</title>
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"> 
+	<style>
+		body {
+				background-image: url("static/img/background_home.png"); 
+				background-repeat: no-repeat;
+				background-size: 1440px 900px;
+
+         }
+		h1 {font-family: "Luminari", Luminari ,fantasy;
+			}
+		h4 { font-family: "Times New Roman", Times, serif;
+			}
+		a {font-size: 30px;
+			font-style: Helvetica;
+			color: white;
+			background-color: blue;}
+			.button {
+					  font: bold 30px Arial;
+					  text-decoration: Helvetica;
+					  background-color:#3a3e44;
+					  color: #af8c00;
+					  padding: 5px 10px 5px 10px;
+					  border-top: 1px solid #CCCCCC;
+					  border-right: 1px solid #333333;
+					  border-bottom: 1px solid #333333;
+					  border-left: 1px solid #CCCCCC;
+					}
+	div {position: relative;width:1000px;left:150px;text-indent: 50px;}
+	h2 {position: relative; width:100px;left:180px;}
+	#pa {position: relative;left:40px;top: 20px;}
+	#ve {position: relative;left:-40px;top: 20px;}
+	</style>
+</head>
+<body>
+
+{% block content %}
+
+
+<center>
+	<br /><h1 style="color:#560b1a; font-size:50px" >Foolproof Public Distribution System</h1>
+		<br /><br />
+	</center>
+	<br /><h2 style="color:#244f00"><strong>About:</strong></h2>
+	<div><h3 style="color:#001368"><ol><br /><p>PDS is the largest food distribution network in the world. It has a network of more than 4 lakh Fair price shops that distribute commodities to 16 Crore households at a cost of more than Rs.15,000 Crore.<br /></p>
+<p>Of the total loss incurred by the government 39% is distribution leakage loss, 38% is over-allotment loss and 17% is active suspect loss.</p> 
+<p>Fool proof public distribution system will control and prevent the losses incurred to the government. Aadhaar cards of a family is linked to Ration card and a smart card will be provided. The biometric data will help in eliminating the ghost cards.
+Packing and bar-coding of grains will ensure proper distribution and tracing of the grains.The extras will be accounted back to the government.</p> </h3></div>
+<center>
+<a id="ve" href="{% url 'ven_login' %}" class="button">Vendor Login</a>
+<a id="pa" href="{% url 'Pack_login' %}" class="button">Packager Login</a>
+</center>	
+
+
+{% endblock %}
+</body>
+</html>

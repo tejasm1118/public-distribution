@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Return</title>
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"> 
+	<style>
+	body {background-color:#e5c3a5;}
+	h3 {font-family: "cursive", cursive, cursive;}
+	h5 {font-family: "Luminari", Luminari ,fantasy;}
+	#sav {font-size: 60px;border-style: }
+</style>
+</head>
+<body>
+{% block content %}<br><br>
+		
+		<table class="table">
+		<thead class="thead-inverse">
+			<tr >
+				
+				<th><center>Item<br> Name</th>
+				<th><center>Vendor <br>Name</th>
+				<th><center>Item <br>Barcode</th>
+				
+				
+			</tr>
+		</thead>
+		<tbody>
+
+
+		{% for i in rice_list %}
+
+			<tr>
+				<td class="align-middle"><center>{{ i.i_name }}</td>
+				<td class="align-middle"><center>{{ i.i_vendor }}</td>
+				<td class="align-middle"><center>{{ i.i_barcode }}</td>
+				
+			</tr>
+		{% endfor %}
+
+		{% for i in wheat_list %}
+
+			<tr>
+				<td class="align-middle"><center>{{ i.i_name }}</td>
+				<td class="align-middle"><center>{{ i.i_vendor }}</td>
+				<td class="align-middle"><center>{{ i.i_barcode }}</td>
+			</tr>
+		{% endfor %}
+		{% for i in sugar_list %}
+
+			<tr>
+				<td class="align-middle"><center>{{ i.i_name }}</td>
+				<td class="align-middle"><center>{{ i.i_vendor }}</td>
+				<td class="align-middle"><center>{{ i.i_barcode }}</td>
+			</tr>
+		{% endfor %}
+			
+		</tbody>
+
+		</table>
+		
+
+		<h3><center><strong>Total Items alloted: </strong>{{ a }}</center></h3><br>
+		<h5><center><strong>Remaining Rice Items: </strong>{{ r }}<strong>   <br>  Rice amount saved : </strong>Rs.{{ rp }}</center></h5>
+		<h5><center><strong>Remaining Wheat Items: </strong>{{ w }}<strong>   <br> Wheat amount saved : </strong>Rs.{{ wp }}</center></h5>
+		<h5><center><strong>Remaining Sugar Items: </strong>{{ s }}<strong>  <br>  Sugar amount saved : </strong>Rs.{{ sp }}</center></h5><br>
+		<h3><center><strong>Total Remaining Items: </strong>{{ b }}</center></h3>
+		<br>		
+		<h3 id="sav"><center><strong>Total amount saved: </strong>Rs.{{ t }}</center></h3><br>
+<center><a href="{%url 'ven_Home' pk %}"><button type="submit" class="btn btn-success">Back to Billing</button>
+{% endblock %}
+</body>
+</html>

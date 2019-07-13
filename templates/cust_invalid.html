@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error id</title>
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+	<style type="text/css">.btn_btn-success {position: relative;left:-20px;top:100px; 
+					font:  17px Arial;
+					  text-decoration: Helvetica;
+					  background-color:green;
+					  color: ;
+					  padding: 5px 10px 5px 10px;
+					  border-top: 1px solid #CCCCCC;
+					  border-right: 1px solid #333333;
+					  border-bottom: 1px solid #333333;
+					  border-left: 1px solid #CCCCCC;}
+					  h3 {font-family: "cursive", cursive, cursive;font-weight: bolder;}
+					  </style> 
+
+</head>
+<body>
+	{% block content %}
+	<br><br>
+	<h3><b><center>{{ msg }}</h3></b><br>
+	<center><a href="{% url 'ven_Home' pk %}" button type="submit" class="btn_btn-success">Back</button></a>
+ 
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer</title>
+	<style>
+	.table {position: relative;left:100px;border-color:black;border-width: 5px;color: #664529;background-color:#ffe9d6; }
+	.tab {position: absolute;left:800px;top:130px;border-color:black;border-width: 5px;background-color:#ffe9d6;color: #664529}
+	h1 {position:relative;left:550px;font-family: "cursive", cursive, cursive;font-weight: bolder;}
+	h2 {position: relative;left:1055px;top:235px;border-style:dotted;border-width: 6px;border-color: red;width: 210px;padding: 8px;top:-150px;color:green;text-align: right;
+	}
+	th {border-color: #2e2b38;border-width:5px;color:#3d345e;}
+	td {border-color: #2e2b38;border-width:1px;}
+	body {
+				background-color: #e5c3a5;
+         }
+	</style>
+</head>
+<body>
+	
+	{% block content %}
+	<h1>Customer Bill</h1><br /><br />
+					<table class="table" border="3" width="500px" cellpadding="20px" cellspacing="5">
+		<thead class="thead-inverse">
+			<tr id="main">
+				
+				<th><center>Customer<br> Name</th>
+				<th><center>Aadhaar <br>Reg No.</th>
+				
+				
+			</tr>
+		</thead>
+		<tbody>
+
+
+		{% for i in cust_list %}
+
+			<tr>
+				<td class="align-middle">{{ i.c_name }}</td>
+				<td class="align-middle">{{ i.c_aadhar }}</td>
+				
+			</tr>
+		{% endfor %}
+			
+		</tbody>
+
+		</table>
+		<br><br><br>
+		<table class="tab" border="3" width="500px" cellpadding="20px" cellspacing="5">
+			<tr><th>Product</th>
+				<th>Quantity</th>
+				<th>Price</th></tr>
+			
+
+			<tr><td>Rice</td>
+				<td><a>{{ rice_quan }} kg</a><br></td>
+				<td><a>Rs. {{ rice_price }}</a><br></td></tr>
+
+			<tr><td>Wheat</td>
+				<td><a>{{ wheat_quan }} kg</a><br></td>
+				<td><a>Rs. {{ wheat_price }}</a><br></td></tr>
+
+			<tr><td>Sugar</td>
+				<td><a>{{ sugar_quan }} kg</a><br></td>
+				<td><a>Rs. {{ sugar_price }}</a><br></td></tr>
+		</table>
+		<br>
+		<br>
+		<a><h2>Total Price : Rs. {{ total_price }}</h2></a><br>
+
+
+		
+	{% endblock %}
+<center><a href="{%url 'ven_Home' pk %}" button class="btn btn-danger" >Logout</a>
+</body>
+
+</html>

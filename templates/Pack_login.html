@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PDS-Manufacturer Login</title>
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+	<style>
+	body {
+				background-color: #dfd6ff;
+         }
+         
+			div {background-color: #dfd6ff;}
+						center {background-color: #dfd6ff;}
+
+	.row_justify-content-center {position:relative;top:50px;left:400px;border-color:black;border-width: 3px;}
+	.form-control {background-color: #f1edff;}
+	h1 {position :relative;top:5px;left:485px;font-family: "cursive", cursive, cursive;font-weight: 900;}
+	</style> 
+</head>
+<body>
+{% block content %}
+	<form method='POST'>
+	{% csrf_token %}
+	<br>
+	<centre><h1>Packer Login</h1></centre>
+	<div class="row_justify-content-center" >     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+	<div class='form-group'>
+		<label for='id_p_name'>Packer Name</label>
+		<input type='text' class='form-control' id='id_p_name' name='p_name'>
+	</div>
+	<div class='form-group'>
+		<label for="id_p_Id">Packer Id</label>
+		<input type='text' class='form-control' id='id_p_Id' name='p_Id'>
+	</div>
+	<div class='form-group'>
+		<label for="id_p_password">Password</label>
+		<input type="Password" class="form-control" id="id_p_password" name="p_password">
+	</div>
+
+	<center><button type="submit" class="btn btn-success">Login</button></center>
+	</form>
+	<br><br><br>
+	<center><a href="{%url 'home' %}" button class="btn btn-danger" >Home</a>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}
+</body>
+</html>

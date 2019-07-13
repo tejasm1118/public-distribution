@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PDS-Packer Home</title>
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"> 
+	<style>
+	body {
+				background-color: #dfd6ff;
+         }
+         button {
+					  font:  20px Arial;
+					  text-decoration: Helvetica;
+					  background-color:green;
+					  color: white;
+					  padding: 5px 10px 5px 10px;
+					  border-top: 1px solid #CCCCCC;
+					  border-right: 1px solid #333333;
+					  border-bottom: 1px solid #333333;
+					  border-left: 1px solid #CCCCCC;
+					}
+			div {background-color: #dfd6ff;}
+		
+	.row_justify-content-center {position:relative;top:50px;left:400px;border-color:black;border-width: 3px;}
+	.form-control {background-color: #f1edff;}
+	h1 {position :relative;top:5px;left:500px;font-family: "cursive", cursive, cursive;font-weight: 900;}
+	</style>
+</head>
+<body>
+{% block content %}
+	<form method='POST'>
+	{% csrf_token %}
+	<br>
+	<centre><h1>Item Update</h1></centre>
+	<div class="row_justify-content-center" >     
+   		<div class="col-lg-4 col-md-10 col-sm-10">   
+   		    <div class="card">    
+   		         <div class="card-body">
+	<div class='form-group'>
+
+		<label for='id_i_Id'>Item</label>
+		
+		<select id='id_i_Id' name='i_id'>
+		  	<option value= "1">Rice</option>
+		  	<option value= "2">Wheat</option>
+		  	<option value= "3">Sugar</option>
+
+		</select>
+		
+	</div>
+
+	<div class='form-group'>
+		<label for='id_i_unique'>Enter the bar code number</label>
+		<input type='text' class='form-control' id='id_i_unique' name='i_unique'>
+	</div>
+
+	<div class='form-group'>
+		<label for="id_v_id">vendor name</label>
+		<!-- <input type="text" class="form-control" id="id_v_id" name="v_id"> -->
+		
+		<select id='id_v_id' name='v_id'>
+			{% for i in v_list %}
+		  		<option value= "{{ i.v_id }}">{{ i.name }}</option>
+			{% endfor %}
+		  	
+
+		</select>
+		
+	</div>
+
+	<center><button type="submit" class="btn btn-success">Add item</button>
+	</form><br><br><br>
+	
+	<center><a href="{%url 'Pack_login' %}" button class="btn btn-danger" >Log Out</a>
+
+
+</div>
+
+</div>
+</div>
+</div>
+<br><br><br>
+
+<center><a href="{%url 'request_return' pk %}"><button type="submit" class="btn btn-success">Check the available return</button></a><br><br><br><br><br><br><br>
+{% endblock %}
+</body>
+</html>
+

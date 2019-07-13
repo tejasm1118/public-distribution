@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Returns</title>
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"> 
+	<style>
+		div {background-color: green;}
+	</style>
+</head>
+<body>
+{% block content %}
+
+		<table class="table">
+		<thead class="thead-inverse">
+			<tr >
+				
+				<th><center>Item<br> Name</th>
+				<th><center>Vendor <br>Name</th>
+				<th><center>Item <br>Barcode</th>
+				
+				
+			</tr>
+		</thead>
+		<tbody>
+
+
+		{% for i in rice_list %}
+
+			<tr>
+				<td class="align-middle"><center>{{ i.i_name }}</td>
+				<td class="align-middle"><center>{{ i.i_vendor }}</td>
+				<td class="align-middle"><center>{{ i.i_barcode }}</td>
+				
+			</tr>
+		{% endfor %}
+
+		{% for i in wheat_list %}
+
+			<tr>
+				<td class="align-middle"><center>{{ i.i_name }}</td>
+				<td class="align-middle"><center>{{ i.i_vendor }}</td>
+				<td class="align-middle"><center>{{ i.i_barcode }}</td>
+			</tr>
+		{% endfor %}
+		{% for i in sugar_list %}
+
+			<tr>
+				<td class="align-middle"><center>{{ i.i_name }}</td>
+				<td class="align-middle"><center>{{ i.i_vendor }}</td>
+				<td class="align-middle"><center>{{ i.i_barcode }}</td>
+			</tr>
+		{% endfor %}
+			
+		</tbody>
+
+		</table>
+<center><a href="{%url 'Pack_Home' pk %}"> <button type="submit" class="btn btn-success">Assign New Item</button></a>
+
+	
+{% endblock %}
+</body>
+</html>
